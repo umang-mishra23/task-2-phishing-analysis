@@ -1,0 +1,11 @@
+=== Email Header Analysis ===
+Tool used: https://mxtoolbox.com/EmailHeaders.aspx
+
+Key Findings:
+1. Return-Path: <support@paypa1.com> → Domain does not match official PayPal domain.
+2. Received from: 185.221.55.82 → IP geolocated to Russia (PayPal HQ is in the US).
+3. SPF: FAIL → Sender not authorized by paypal.com.
+4. DKIM: FAIL → No valid DKIM signature found.
+5. DMARC: FAIL → Policy: reject, Action: none (spoofed sender bypassed check).
+
+Conclusion: Multiple authentication failures and suspicious IP address strongly indicate spoofing.
